@@ -22,7 +22,7 @@ class Assignment(models.Model):
     )
     head = models.CharField('Captions', max_length=200)
     content = models.TextField('Content')
-    time_created = models.DateTimeField(default=now)
+    time_created = models.DateTimeField(default=now, editable=False)
     type = models.CharField(max_length=1, choices=ASSIGNMENT_CHOICE)
     created_by = models.OneToOneField(Tutor, on_delete=models.PROTECT)
     student = models.ManyToManyField(Student)
